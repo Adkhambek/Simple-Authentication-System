@@ -1,4 +1,5 @@
 const model = require("./model");
+const { sign } = require("../../lib/jwt");
 
 exports.signup = async (req, res) => {
   const data = req.body;
@@ -15,18 +16,23 @@ exports.signup = async (req, res) => {
 exports.login = async (req, res) => {
   const data = req.body;
   const login = await model.login(data);
-  if (login.length) {
-    res.status(201).json({
-      status: "success",
-      message: "logined successfully",
-      data: {
-        user: login,
-      },
+  if (!data.username || !data.password) {
+    res.status(400).json({
+      status: "fail",
+      message: "Please provide username and password",
     });
-  } else {
+  } else if (!login.length) {
     res.status(401).json({
       status: "fail",
-      message: "wrong password or username",
+      message: "Incorrect password or username",
+    });
+  } else {
+    const id = login[0].id.toString();
+    const token = sign(id);
+
+    res.status(200).json({
+      status: "success",
+      token,
     });
   }
 };

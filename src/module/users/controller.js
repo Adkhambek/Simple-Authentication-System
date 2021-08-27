@@ -21,15 +21,3 @@ exports.getUserById = async (req, res) => {
     },
   });
 };
-
-exports.insertUser = async (req, res) => {
-  const inputs = req.body;
-  const newUser = await model.addUser(inputs);
-  res.status(201).json({
-    status: "success",
-    message: "Inserted successfully",
-    data: {
-      user: newUser,
-    },
-  });
-};

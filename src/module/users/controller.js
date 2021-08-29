@@ -12,6 +12,7 @@ exports.getUsers = async (req, res) => {
 };
 
 exports.getUserById = async (req, res) => {
+  console.log(req.headers);
   const id = req.params.id * 1;
   const user = await model.fetchUser(id);
   res.status(200).json({

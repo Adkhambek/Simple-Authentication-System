@@ -29,7 +29,6 @@ exports.login = async (req, res) => {
   } else {
     const id = login[0].id.toString();
     const token = sign(id);
-
     res.status(200).json({
       status: "success",
       token,

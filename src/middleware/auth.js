@@ -1,6 +1,7 @@
 const { verify } = require("../lib/jwt");
 const model = require("../module/users/model");
 exports.protect = async (req, res, next) => {
+  console.log(req.id);
   let token;
   if (
     req.headers.authorization &&
@@ -28,6 +29,7 @@ exports.protect = async (req, res, next) => {
       });
     }
     req.user = userExist;
+    next();
   } catch (error) {
     if (error.name === "JsonWebTokenError") {
       return res.status(401).json({
@@ -41,5 +43,4 @@ exports.protect = async (req, res, next) => {
       });
     }
   }
-  next();
 };

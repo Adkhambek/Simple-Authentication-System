@@ -16,6 +16,7 @@ exports.signup = async (req, res) => {
 exports.login = async (req, res) => {
   const data = req.body;
   const login = await model.login(data);
+  console.log(data.username, data.password);
   if (!data.username || !data.password) {
     res.status(400).json({
       status: "fail",

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/css/login.css" />
   </head>
   <body>
+    <span id="alertBox" class="alert hidden">Success</span>
     <div class="login">
       <h1>Login</h1>
       <form id="loginForm">
@@ -25,20 +26,16 @@
             id="usernameInput"
             placeholder="username"
             autocomplete="off"
-            required
           />
         </label>
         <label>
           <p>Password:</p>
-          <input
-            type="password"
-            id="passwordInput"
-            placeholder="password"
-            required
-          />
+          <input type="password" id="passwordInput" placeholder="password" />
         </label>
         <button type="submit">Login</button>
       </form>
     </div>
+    <script src="/js/fetch.js"></script>
+    <script src="/js/login.js"></script>
   </body>
 </html>

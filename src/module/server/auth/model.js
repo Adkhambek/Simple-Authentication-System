@@ -22,7 +22,7 @@ exports.register = (data) =>
   );
 
 const LOGIN = `
-SELECT * FROM users WHERE username = ? AND CAST(AES_DECRYPT(password, ?) AS CHAR) = ?
+SELECT * FROM users WHERE BINARY username = BINARY ? AND BINARY CAST(AES_DECRYPT(password, ?) AS CHAR) = BINARY ?
 `;
 
 exports.login = (data) => {

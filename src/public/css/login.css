@@ -5,19 +5,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .login {
   background-color: #fff;
   padding: 2rem;
+  width: 30%;
 }
 
 .login h1 {
   text-align: center;
-  margin-bottom: 2rem;
 }
 
-label {
+form {
+  margin-top: 1rem;
 }
 
 label p {
@@ -45,4 +47,22 @@ label input {
 
 .login button:hover {
   background-color: rgb(42, 42, 42);
+}
+
+.alert {
+  display: block;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  width: 30%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.alert-success {
+  background-color: rgb(22, 155, 22);
+}
+
+.alert-warning {
+  background-color: rgb(216, 9, 9);
 }

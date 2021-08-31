@@ -1,5 +1,5 @@
 const { verify } = require("../lib/jwt");
-const model = require("../module/users/model");
+const model = require("../module/server/users/model");
 exports.protect = async (req, res, next) => {
   console.log(req.id);
   let token;

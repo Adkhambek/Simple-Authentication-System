@@ -1,5 +1,5 @@
 const model = require("./model");
-const { sign } = require("../../lib/jwt");
+const { sign } = require("../../../lib/jwt");
 
 exports.signup = async (req, res) => {
   const data = req.body;
@@ -28,10 +28,17 @@ exports.login = async (req, res) => {
     });
   } else {
     const id = login[0].id.toString();
-    const token = sign(id);
-    res.status(200).json({
-      status: "success",
-      token,
-    });
+    const token = "Bearer " + sign(id);
+    res
+      .cookie("token", token, {
+        expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
+        httpOnly: true,
+        secure: process.env.NODE_ENV.trim() === "production",
+      })
+      .status(200)
+      .json({
+        status: "success",
+        message: "Logged in successfully",
+      });
   }
 };

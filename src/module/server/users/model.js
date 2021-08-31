@@ -1,4 +1,4 @@
-const { fetchAll, fetchOne } = require("../../database/connect");
+const { fetchAll, fetchOne } = require("../../../database/connect");
 
 const GET_ALL_USERS = `
 SELECT * FROM users

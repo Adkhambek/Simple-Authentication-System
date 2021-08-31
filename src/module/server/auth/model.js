@@ -1,5 +1,5 @@
-const { fetchAll, fetchOne } = require("../../database/connect");
-const { secretKey } = require("../../config");
+const { fetchAll, fetchOne } = require("../../../database/connect");
+const { secretKey } = require("../../../config");
 
 const INSERT_USER = `
 INSERT INTO users(

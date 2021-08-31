@@ -1,6 +1,7 @@
 const model = require("./model");
 
 exports.getUsers = async (req, res) => {
+  console.log(JSON.stringify(req.cookies));
   const users = await model.fetchUsers();
   res.status(200).json({
     status: "success",
@@ -12,7 +13,6 @@ exports.getUsers = async (req, res) => {
 };
 
 exports.getUserById = async (req, res) => {
-  console.log(req.headers);
   const id = req.params.id * 1;
   const user = await model.fetchUser(id);
   res.status(200).json({

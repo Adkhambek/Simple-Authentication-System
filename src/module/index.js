@@ -1,5 +1,4 @@
-const usersRouter = require("./users");
-const authRouter = require("./auth");
-const condidateRouter = require("./condidate");
+const usersRouter = require("./server/users");
+const authRouter = require("./server/auth");
 
-module.exports = [usersRouter, authRouter, condidateRouter];
+module.exports = [usersRouter, authRouter];

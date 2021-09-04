@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
+    <span id="alertBox" class="alert hidden">Success</span>
+    <div class="login">
+      <h1>Signup</h1>
+      <form id="signupForm">
+        <label>
+          <p>Username:</p>
+          <input
+            type="text"
+            id="usernameInput"
+            placeholder="username"
+            autocomplete="off"
+          />
+        </label>
+        <label>
+          <p>Password:</p>
+          <input type="password" id="passwordInput" placeholder="password" />
+        </label>
+        <label>
+          <p>mail:</p>
+          <input type="email" id="mailInput" placeholder="mail" />
+        </label>
+        <label>
+          <p>age:</p>
+          <input type="number" id="ageInput" placeholder="age" />
+        </label>
+        <button type="submit">Signup</button>
+      </form>
+    </div>
+    <script src="/js/fetch.js"></script>
+    <script src="/js/signup.js"></script>
+  </body>
+</html>
